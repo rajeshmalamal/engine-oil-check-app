@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Service History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Vehicle</ion-label>
+    <ion-select [(ngModel)]="selectedVehicleId" (ionChange)="fetchServiceHistory()">
+      <ion-select-option *ngFor="let vehicle of vehicles" [value]="vehicle.id">
+        {{ vehicle.ownerName }} - {{ vehicle.vehicleNumber }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-list>
+    <ion-item *ngFor="let record of serviceRecords">
+      <ion-label>
+        <h2>{{ record.serviceType }}</h2>
+        <p>{{ record.serviceDate | date }} - {{ record.notes }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perform Service</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Vehicle</ion-label>
+    <ion-select [(ngModel)]="selectedVehicleId">
+      <ion-select-option *ngFor="let vehicle of vehicles" [value]="vehicle.id">
+        {{ vehicle.ownerName }} - {{ vehicle.vehicleNumber }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Service Type</ion-label>
+    <ion-input [(ngModel)]="serviceType"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Notes</ion-label>
+    <ion-input [(ngModel)]="notes"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="performService()">Perform Service</ion-button>
+</ion-content>

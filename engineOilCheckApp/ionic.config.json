@@ -1,0 +1,7 @@
+{
+  "name": "engineOilCheckApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
